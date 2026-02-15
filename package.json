@@ -1,5 +1,24 @@
 {
+  "name": "visitor-tracker",
+  "version": "1.0.0",
+  "description": "Express app with SQLite to track visitor locations",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "express",
+    "sqlite",
+    "visitor-tracker"
+  ],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
