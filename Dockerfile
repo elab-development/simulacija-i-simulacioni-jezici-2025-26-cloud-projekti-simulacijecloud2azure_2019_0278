@@ -1,20 +1,12 @@
-# Use Node.js LTS version
 FROM node:20-alpine
 
-# Set working directory
 WORKDIR /app
+COPY package.json ./
+RUN npm install --omit=dev
 
-# Copy package files
-COPY package*.json ./
+COPY server.js ./
 
-# Install dependencies
-RUN npm ci --only=production
+EXPOSE 8080
+ENV PORT=8080
 
-# Copy application code
-COPY . .
-
-# Expose the port your app runs on (adjust if different)
-EXPOSE 3000
-
-# Start the application
-CMD ["node", "app.js"]
+CMD ["npm", "start"]
